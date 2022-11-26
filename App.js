@@ -1,20 +1,36 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { React, useCallback } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Main, Login } from "./screens";
+import { useFonts } from 'expo-font';
+import * as SplashScreen from 'expo-splash-screen';
 
-export default function App() {
+// SplashScreen.preventAutoHideAsync();
+const Stack = createNativeStackNavigator();
+
+function App() {
+  const [fontsLoaded] = useFonts({
+    'JejuMyeongjo': require('./assets/fonts/JejuMyeongjo-Regular.ttf'),
+  });
+
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded) {
+      await SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
+
+  if (!fontsLoaded){
+    return null;
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Demar APP!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Demar" component={Main} options={{view: onLayoutRootView}} />
+        <Stack.Screen name="Login" component={Login} options={{view: onLayoutRootView}}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
