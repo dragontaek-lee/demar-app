@@ -1,7 +1,10 @@
 import mainIcon from '../assets/mainIcon.png';
 import { 
-  LoginContainer, ImageContainer, ImageContent, InnerText, ImageInner, ButtonContainer, ButtonContent, InputContainer, InputContent, InputText
+  ImageContainer, ImageContent, InnerText, ImageInner, ButtonContainer, ButtonContent
 } from '../theme/StyledLoginPage';
+import {
+  LoginContainer, InputContainer, InputContent, InputText
+} from '../theme/Common';
 
 export function Login({navigation, view}) {
     return (
