@@ -24,12 +24,7 @@ function App() {
   }
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Demar" component={Main} options={{view: onLayoutRootView}} />
-        <Stack.Screen name="Login" component={Login} options={{view: onLayoutRootView}}/>
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Login options={{view: onLayoutRootView}} />
   );
 }
 

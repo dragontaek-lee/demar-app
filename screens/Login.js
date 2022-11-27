@@ -1,7 +1,6 @@
-import { View, Text, Image } from 'react-native';
 import mainIcon from '../assets/mainIcon.png';
 import { 
-  LoginContainer, ImageContainer, ImageContent, InnerText, ImageInner, ButtonContainer, ButtonContent
+  LoginContainer, ImageContainer, ImageContent, InnerText, ImageInner, ButtonContainer, ButtonContent, InputContainer, InputContent, InputText
 } from '../theme/StyledLoginPage';
 
 export function Login({navigation, view}) {
@@ -12,14 +11,20 @@ export function Login({navigation, view}) {
             <ImageContent source={mainIcon}></ImageContent>
           </ImageInner>
         </ImageContainer>
-          <ButtonContainer>
-            <ButtonContent onPress={()=> navigation.push('Login')} color={'#3F3D56'}>
-              <InnerText>시작하기</InnerText>
+        <InputContainer>
+          <InputText>아이디</InputText>
+          <InputContent placeholder="아이디를 입력해주세요" ></InputContent>
+          <InputText>비밀번호</InputText>
+          <InputContent placeholder="비밀번호를 입력해주세요"></InputContent>
+        </InputContainer>
+        <ButtonContainer>
+            <ButtonContent onPress={()=> navigation.push('Login')} color={'#FAF5E4'}>
+              <InnerText color={'#000000'}>로그인</InnerText>
             </ButtonContent>
             <ButtonContent onPress={()=> navigation.push('Login')} color={'#E97777'}>
-              <InnerText>가입하기</InnerText>
+              <InnerText color={'#FFFFFF'}>가입하기</InnerText>
             </ButtonContent>
-          </ButtonContainer>
+        </ButtonContainer>
       </LoginContainer>
     );
 }

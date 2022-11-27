@@ -6,7 +6,8 @@ export const LoginContainer = styled.View`
     justify-content: center;
     width: 100%;
     height: 100%;
-    background-color: white;
+    background-color: #3F3D56;
+    fontFamily: 'JejuMyeongjo';
 `
 
 export const ImageContainer = styled.View`
@@ -31,15 +32,12 @@ export const ImageContent = styled.Image`
 `
 
 export const ButtonContainer = styled.View`
-    margin-top: 196px;
+    margin-top: 73px;
     width: 280px;
     height: 92px;
     display: flex;
     align-items: center;
     justify-content: center;
-`
-export const InnerText = styled.Text`
-    color: white;
 `
 
 export const ButtonContent = styled.Pressable`
@@ -52,4 +50,38 @@ export const ButtonContent = styled.Pressable`
     align-items: center;
     justify-content: center;
     margin-bottom: 14px;
+`
+
+export const InnerText = styled.Text`
+    color: white;
+    fontFamily: 'JejuMyeongjo';
+    color: ${(props) => props.color}
+`
+
+export const InputContainer = styled.View`
+    margin-top: 68px;
+    width: 280px;
+    height: 119px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`;
+
+export const InputContent = styled.TextInput`
+    height: 39px;
+    width: 280px;
+    background-color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    padding: 8px;
+`
+
+export const InputText = styled.Text`
+    fontFamily: 'JejuMyeongjo';
+    margin-right: auto;
+    font-size: 11px;
+    margin-bottom: 3px;
+    margin-left: 10px;
+    color: white;
 `
