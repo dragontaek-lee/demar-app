@@ -2,8 +2,6 @@ import mainIcon from '../assets/mainIcon.png';
 import { 
   LoginContainer, ImageContainer, ImageContent, InnerText, ImageInner, ButtonContainer, ButtonContent, InputContainer, InputContent, InputText
 } from '../theme/StyledLoginPage';
-import { Link } from '@react-navigation/native';
-import { SignIn } from './SignIn';
 
 export function Login({navigation, view}) {
     return (
@@ -17,7 +15,7 @@ export function Login({navigation, view}) {
           <InputText>아이디</InputText>
           <InputContent placeholder="아이디를 입력해주세요" ></InputContent>
           <InputText>비밀번호</InputText>
-          <InputContent placeholder="비밀번호를 입력해주세요"></InputContent>
+          <InputContent placeholder="비밀번호를 입력해주세요" secureTextEntry={true}></InputContent>
         </InputContainer>
         <ButtonContainer>
             <ButtonContent onPress={()=> navigation.push('Login')} color={'#FAF5E4'}>
