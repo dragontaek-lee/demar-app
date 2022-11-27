@@ -2,6 +2,8 @@ import mainIcon from '../assets/mainIcon.png';
 import { 
   LoginContainer, ImageContainer, ImageContent, InnerText, ImageInner, ButtonContainer, ButtonContent, InputContainer, InputContent, InputText
 } from '../theme/StyledLoginPage';
+import { Link } from '@react-navigation/native';
+import { SignIn } from './SignIn';
 
 export function Login({navigation, view}) {
     return (
@@ -21,7 +23,7 @@ export function Login({navigation, view}) {
             <ButtonContent onPress={()=> navigation.push('Login')} color={'#FAF5E4'}>
               <InnerText color={'#000000'}>로그인</InnerText>
             </ButtonContent>
-            <ButtonContent onPress={()=> navigation.push('Login')} color={'#E97777'}>
+            <ButtonContent onPress={()=> navigation.push('SignIn')} color={'#E97777'}>
               <InnerText color={'#FFFFFF'}>가입하기</InnerText>
             </ButtonContent>
         </ButtonContainer>

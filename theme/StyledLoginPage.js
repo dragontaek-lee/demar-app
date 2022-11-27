@@ -11,7 +11,6 @@ export const LoginContainer = styled.View`
 `
 
 export const ImageContainer = styled.View`
-    margin-top: 0px;
     width: 337px;
     height: 391px;
     overflow: hidden;
