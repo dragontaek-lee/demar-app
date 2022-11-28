@@ -1,23 +1,12 @@
 import styled from 'styled-components/native';
 
-export const LoginContainer = styled.View`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    background-color: white;
-`
-
 export const ImageContainer = styled.View`
-    margin-top: 0px;
     width: 337px;
-    height: 391px;
+    height: 300px;
     overflow: hidden;
     position: relative;
     display: flex;
     align-items: center;
-
 `
 export const ImageInner = styled.View`
     width: 176px;
@@ -25,21 +14,18 @@ export const ImageInner = styled.View`
 `
 
 export const ImageContent = styled.Image`
-    margin-top: 134px;
+    margin-top: 30px;
     max-width: 100%;
     max-height: 100%;
 `
 
 export const ButtonContainer = styled.View`
-    margin-top: 196px;
+    margin-top: 93px;
     width: 280px;
     height: 92px;
     display: flex;
     align-items: center;
     justify-content: center;
-`
-export const InnerText = styled.Text`
-    color: white;
 `
 
 export const ButtonContent = styled.Pressable`
@@ -52,4 +38,10 @@ export const ButtonContent = styled.Pressable`
     align-items: center;
     justify-content: center;
     margin-bottom: 14px;
+`
+
+export const InnerText = styled.Text`
+    color: white;
+    fontFamily: 'JejuMyeongjo';
+    color: ${(props) => props.color}
 `
