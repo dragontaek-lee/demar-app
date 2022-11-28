@@ -1,0 +1,1 @@
+export { StyledLoginPage } from './StyledLoginPage';
