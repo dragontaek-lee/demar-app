@@ -1,9 +1,9 @@
-import { Image } from 'react-native';
+import { Text } from 'react-native';
 import {
   AuthContainer, InputContainer, InputContent, InputText
 } from '../theme/Common';
 import {
-  PrefaceContainer, PrefaceTitle, PrefaceContent,InnerText, ButtonContainer, ButtonContent, InputBackText, Icon, ButtonInner
+  PrefaceContainer, PrefaceTitle, PrefaceContent,InnerText, ButtonContainer, ButtonContent, InputBackText, IconContent, ButtonInner
 } from '../theme/StyledSignInPage';
 import * as Progress from 'react-native-progress';
 
@@ -29,13 +29,12 @@ export function SignIn({navigation, view}) {
         <ButtonContainer>
           <ButtonContent>
             <ButtonInner>
-              <Icon source={require('../assets/spotify.png')}/>
               <InnerText>
                 Spotify 연동하고 가입하기
               </InnerText>
             </ButtonInner>
           </ButtonContent>
-          <InputBackText>가입하지 않고 뒤로가기</InputBackText>
+          <InputBackText onPress={()=> navigation.push('Login')}>가입하지 않고 뒤로가기</InputBackText>
         </ButtonContainer>
     </AuthContainer>
     );

@@ -41,10 +41,13 @@ export const ButtonContent = styled.Pressable`
     align-items: center;
     justify-content: center;
     margin-bottom: 14px;
+    color: white;
 `
 
 export const ButtonInner = styled.View`
     display: flex;
+    aligin-items: center;
+    justify-content: center;
 `
 
 export const InnerText = styled.Text`
@@ -58,7 +61,5 @@ export const InputBackText = styled.Text`
     font-size: 12px;
 `
 
-export const Icon = styled.Image`
-    width: 28px;
-    height: 29px;
+export const IconContent = styled.Image`
 `
