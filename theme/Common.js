@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-export const LoginContainer = styled.View`
+export const AuthContainer = styled.View`
     display: flex;
     align-items: center;
     justify-content: center;

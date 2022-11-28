@@ -3,20 +3,20 @@ import {
   ImageContainer, ImageContent, InnerText, ImageInner, ButtonContainer, ButtonContent
 } from '../theme/StyledLoginPage';
 import {
-  LoginContainer, InputContainer, InputContent, InputText
+  AuthContainer, InputContainer, InputContent, InputText
 } from '../theme/Common';
 
 export function Login({navigation, view}) {
     return (
-      <LoginContainer onLayout={view}>
+      <AuthContainer onLayout={view}>
         <ImageContainer>
           <ImageInner>
             <ImageContent source={mainIcon}></ImageContent>
           </ImageInner>
         </ImageContainer>
         <InputContainer>
-          <InputText>아이디</InputText>
-          <InputContent placeholder="아이디를 입력해주세요" ></InputContent>
+          <InputText>이메일</InputText>
+          <InputContent placeholder="이메일을 입력해주세요" ></InputContent>
           <InputText>비밀번호</InputText>
           <InputContent placeholder="비밀번호를 입력해주세요" secureTextEntry={true}></InputContent>
         </InputContainer>
@@ -28,6 +28,6 @@ export function Login({navigation, view}) {
               <InnerText color={'#FFFFFF'}>가입하기</InnerText>
             </ButtonContent>
         </ButtonContainer>
-      </LoginContainer>
+      </AuthContainer>
     );
 }

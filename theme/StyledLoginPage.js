@@ -7,7 +7,6 @@ export const ImageContainer = styled.View`
     position: relative;
     display: flex;
     align-items: center;
-
 `
 export const ImageInner = styled.View`
     width: 176px;
