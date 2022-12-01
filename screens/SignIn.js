@@ -1,4 +1,3 @@
-import { Text } from 'react-native';
 import {
   AuthContainer, InputContainer, InputContent, InputText
 } from '../theme/Common';
@@ -7,8 +6,8 @@ import {
 } from '../theme/StyledSignInPage';
 import * as Progress from 'react-native-progress';
 import { SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET } from '@env';
-import { makeRedirectUri, useAuthRequest } from 'expo-auth-session';
-import { useEffect } from 'react';
+import { ResponseType, useAuthRequest } from 'expo-auth-session';
+import { useEffect, useState } from 'react';
 import * as WebBrowser from 'expo-web-browser';
 import * as Linking from 'expo-linking';
 
@@ -20,10 +19,25 @@ const discovery = {
 };
 
 export function SignIn({navigation, view}) {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [secondPassword, setSecondPassword] = useState('');
+    const [nickname, setNickname] = useState('');
+
     const [request, response, promptAsync] = useAuthRequest(
       {
+        responseType: ResponseType.Token,
         clientId: `${SPOTIFY_CLIENT_ID}`,
-        scopes: ['user-read-email', 'playlist-modify-public','streaming'],
+        scopes: [
+          "user-read-recently-played",
+          "user-read-playback-state",
+          "user-read-currently-playing",
+          "user-top-read",
+          "user-modify-playback-state",
+          "streaming",
+          "user-read-private",
+          "user-read-email"
+        ],
         usePKCE: false,
         redirectUri: Linking.createURL('SignIn'),
       },
@@ -32,8 +46,9 @@ export function SignIn({navigation, view}) {
     
     useEffect(() => {
       if (response?.type === 'success') {
-          const { code } = response.params;
+          const { access_token } = response.params;
           // access code
+          console.log(access_token);
         }
     }, [response]);
 
@@ -47,13 +62,27 @@ export function SignIn({navigation, view}) {
         </PrefaceContainer>
         <InputContainer>
           <InputText>이메일</InputText>
-          <InputContent placeholder="이메일을 입력해주세요." ></InputContent>
+          <InputContent 
+            placeholder="이메일을 입력해주세요." 
+            onChangeText={(email) => setEmail(email)}
+          />
           <InputText>비밀번호</InputText>
-          <InputContent placeholder="비밀번호를 입력해주세요." secureTextEntry={true}></InputContent>
+          <InputContent
+            placeholder="비밀번호를 입력해주세요." 
+            secureTextEntry={true}
+            onChangeText={(password) => setPassword(password)}
+          />
           <InputText>비밀번호 확인</InputText>
-          <InputContent placeholder="비밀번호를 입력해주세요." secureTextEntry={true}></InputContent>
+          <InputContent
+            placeholder="비밀번호를 입력해주세요."
+            secureTextEntry={true}
+            onChangeText={(secondPassword) => setSecondPassword(secondPassword)}
+          />
           <InputText>닉네임</InputText>
-          <InputContent placeholder="닉네임을 입력해주세요."></InputContent>
+          <InputContent
+            placeholder="닉네임을 입력해주세요."
+            onChangeText={(nickname) => setNickname(nickname)}
+          />
         </InputContainer>
         <ButtonContainer>
           <ButtonContent onPress={()=>promptAsync()}>
