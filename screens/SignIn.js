@@ -10,6 +10,7 @@ import { ResponseType, useAuthRequest } from 'expo-auth-session';
 import { useEffect, useState } from 'react';
 import * as WebBrowser from 'expo-web-browser';
 import * as Linking from 'expo-linking';
+import { signUp } from '../api/api';
 
 WebBrowser.maybeCompleteAuthSession();
 
@@ -43,12 +44,18 @@ export function SignIn({navigation, view}) {
       },
       discovery
     );
+
+    const requestSignUp = async (email, password, nickname, access_token) => {
+      return await signUp(email, password, nickname, access_token);
+    }
     
     useEffect(() => {
       if (response?.type === 'success') {
           const { access_token } = response.params;
-          // access code
-          console.log(access_token);
+          requestSignUp(email, password, nickname, access_token).then(token=>{
+            console.log(token);
+            navigation.push('Main');
+          })
         }
     }, [response]);
 
