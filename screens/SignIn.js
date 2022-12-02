@@ -53,6 +53,7 @@ export function SignIn({navigation, view}) {
       if (response?.type === 'success') {
           const { access_token } = response.params;
           requestSignUp(email, password, nickname, access_token).then(token=>{
+            //TODO: input to session
             console.log(token);
             navigation.push('Main');
           })
