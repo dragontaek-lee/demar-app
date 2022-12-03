@@ -2,7 +2,7 @@ import DiaryAddBtn from '../assets/DiaryAddBtn.png';
 
 import {MainContainer, DiaryContainer}from '../theme/Common';
 import { ImageInner } from '../theme/StyledLoginPage';
-import {LogoContainer, LogoTitle, LogoContent, DiaryTextComponent,DiaryContent,DiaryTitle, DiaryDates} from '../theme/StyledMainPage';
+import {LogoContainer, LogoTitle, LogoContent, DiaryTextComponent,DiaryContent,DiaryTitle, DiaryDate} from '../theme/StyledMainPage';
 
 
 export function Main({view, DiaryTitle_props, DiartText_props}) {

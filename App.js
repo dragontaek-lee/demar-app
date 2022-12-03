@@ -1,7 +1,7 @@
 import { React, useCallback } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Login, SignIn, Main} from "./screens";
+import { Login, SignIn, Main, Write} from "./screens";
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 
