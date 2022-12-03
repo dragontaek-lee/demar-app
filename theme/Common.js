@@ -37,3 +37,22 @@ export const InputText = styled.Text`
     margin-left: 10px;
     color: white;
 `
+
+export const MainContainer =styled.View`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #3FEFCF3;
+    fontFamily: 'JejuMyeongjo';
+`
+export const DiaryContainer = styled.View`
+box-sizing: border-box;
+
+position: relative;
+width: 327px;
+height: 60px;
+
+border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+`
