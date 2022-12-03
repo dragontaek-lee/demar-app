@@ -45,6 +45,8 @@ export function SignIn({navigation, view}) {
       discovery
     );
 
+    console.log(Linking.createURL('SignIn'));
+
     const requestSignUp = async (email, password, nickname, access_token) => {
       return await signUp(email, password, nickname, access_token);
     }
@@ -52,10 +54,13 @@ export function SignIn({navigation, view}) {
     useEffect(() => {
       if (response?.type === 'success') {
           const { access_token } = response.params;
+          console.log(access_token);
           requestSignUp(email, password, nickname, access_token).then(token=>{
             //TODO: input to session
             console.log(token);
-            navigation.push('Main');
+            navigation.reset({routes: [{name: 'Main'}]})
+          }).catch(e=>{
+            console.log('error');
           })
         }
     }, [response]);

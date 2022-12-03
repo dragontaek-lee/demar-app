@@ -16,7 +16,8 @@ export function Login({navigation, view}) {
       await processLogind(email, password).then(token=>{
         //TODO: input to session
         console.log(token);
-        navigation.push('Main');
+        // navigation.push('Main');
+        navigation.reset({routes: [{name: 'Main'}]})
       })
     }
 
