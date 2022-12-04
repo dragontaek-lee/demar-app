@@ -7,16 +7,25 @@ import {
 } from '../theme/Common';
 import { processLogind } from '../api/api';
 import { useState } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export function Login({navigation, view}) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    const storeData = async (value) => {
+      try {
+        await AsyncStorage.setItem('AccessToken', value);
+        console.log('token saved successfully');
+      } catch (e) {
+        console.log('token saved error : Asynce Storage');
+      }
+    };
+
     const clickLogin = async (email, password) => {
       await processLogind(email, password).then(token=>{
         //TODO: input to session
-        console.log(token);
-        // navigation.push('Main');
+        storeData(token);
         navigation.reset({routes: [{name: 'Main'}]})
       })
     }

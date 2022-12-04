@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react';
 import * as WebBrowser from 'expo-web-browser';
 import * as Linking from 'expo-linking';
 import { signUp } from '../api/api';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 WebBrowser.maybeCompleteAuthSession();
 
@@ -24,6 +25,15 @@ export function SignIn({navigation, view}) {
     const [password, setPassword] = useState('');
     const [secondPassword, setSecondPassword] = useState('');
     const [nickname, setNickname] = useState('');
+
+    const storeData = async (value) => {
+      try {
+        await AsyncStorage.setItem('AccessToken', value);
+        console.log('token saved successfully');
+      } catch (e) {
+        console.log('token saved error : Asynce Storage');
+      }
+    };
 
     const [request, response, promptAsync] = useAuthRequest(
       {
@@ -45,6 +55,7 @@ export function SignIn({navigation, view}) {
       discovery
     );
 
+    console.log(SPOTIFY_CLIENT_ID);
     console.log(Linking.createURL('SignIn'));
 
     const requestSignUp = async (email, password, nickname, access_token) => {
@@ -57,7 +68,7 @@ export function SignIn({navigation, view}) {
           console.log(access_token);
           requestSignUp(email, password, nickname, access_token).then(token=>{
             //TODO: input to session
-            console.log(token);
+            storeData(token);
             navigation.reset({routes: [{name: 'Main'}]})
           }).catch(e=>{
             console.log('error');
