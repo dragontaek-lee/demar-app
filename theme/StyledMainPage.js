@@ -2,103 +2,135 @@ import styled from 'styled-components/native';
 
 
 export const LogoContainer = styled.View`
-
+    position : absolute;
+    top : 50px;
+    left : 20px;
+    overflow : auto;
+    border : 1px solid black;
 `
 
 export const LogoTitle = styled.Text`
-    position: absolute;
-    width: 89px;
-    height: 29px;
-    left: 21px;
-    top: 51px;
+    border : 1px solid black;
 
-    font-family: 'Pretendard Variable';
-    font-style: normal;
-    font-weight: 700;
+    position: relative;
+    width: 100px;
+    height: 29px;
+    // left: 21px;
+    // top: 51px;
+
     font-size: 24px;
     line-height: 29px;
     /* identical to box height */
     display: flex;
     align-items: center;
     text-align: center;
+    font-family : 'JejuMyeongjo'
 
     color: #3F3D56;
 
 `
 export const LogoContent = styled.Text`
-    position: absolute;
+    position: relative;
     width: 165px;
     height: 14px;
-    left: 21px;
-    top: 80px;
+    // left: 21px;
+    // top: 80px;
 
-    font-family: 'Pretendard Variable';
-    font-style: normal;
-    font-weight: 600;
     font-size: 12px;
     line-height: 14px;
     display: flex;
     align-items: center;
+    font-family : 'JejuMyeongjo'
 
     color: #3F3D56;
 
 `
 export const DiaryTextComponent = styled.View`
-    
+    float : left;
+    border : 1px solid red; 
+    box-sizing: border-box;
+    width : 70%;
+    height : 60px;
+    display: inline-flex;
+    margin: auto;
+    margin-right : 0px;
+
 
 `
-export const DiaryContent = styled.Text`
-    
-`
+export const DiaryDate = styled.Text`
+// position: relative;
+float : right;
+height: 60px;
+width: 25%;
+margin : 2px;
+margin-left : 0px;
+// border-color : rgba(0, 0, 0, 0.2);
+// border-left-width : 1px;
+border : 1px solid blue;
+display : inline-flex;
 
+line-height : 60px;
+text-align: center;
+font-size: 24px;
+color: #3F3D56;
+font-family : 'JejuMyeongjo'
+`
 export const DiaryTitle = styled.Text`
-position: absolute;
-left: 0%;
-right: 22.58%;
-top: 0%;
-bottom: 62.5%;
+// position: relative;
+// border : 1px solid black;
+width: 70%
+height: 30px;
 
-font-family: 'Pretendard Variable';
-font-style: normal;
-font-weight: 400;
 font-size: 16px;
 line-height: 19px;
 display: flex;
 align-items: center;
+font-family : 'JejuMyeongjo'
 
 color: #3F3D56;
 `
+export const DiaryContent = styled.Text`
+// position: relative;
+// left: 0%;
+// top: 37.5%;
+// bottom: 27.21%;
+// border : 1px solid black;
+// width: 70%
+height: 30px;
 
-export const DiaryDate = styled.Text`
-/* 일기 내용 블라 블라 */
 
-position: absolute;
-left: 0%;
-right: 22.58%;
-top: 37.5%;
-bottom: 27.21%;
+font-family: 'JejuMyeongjo';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 17px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
 `
-
-
-
-export const DiaryAddBtn = styled.Pressable`
-    position: absolute;   
-    height: 44px;
-    width: 44px;
-    left: 319px;
-    top: 769px;
-    border-radius: 31px;
-    filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.1));
-    
-    // signin ButtonContent reference
-    // height: 41px;
-    // width: 280px;
-    // border-radius: 20px;
-    // background-color: black;
+export const DiaryAddButton = styled.Pressable`
+    height: 80px;
+    width: 80px;
+    left: 75%;
+    bottom : 0%;
+    // top: 769px;
+    border-radius: 1000px;
+    border : 1px solid green;
     // filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.1));
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
-    // margin-bottom: 14px;
-    `;
+    
+    `
+
+export const ImageInner = styled.Image`
+    // position: absolute;
+    width: 150px;
+    height: 150px;
+    max-width: 100%;
+    max-height: 100%;
+    display : block;
+
+
+    // filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.1));
+`
 

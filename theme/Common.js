@@ -32,7 +32,6 @@ export const InputContent = styled.TextInput`
 export const InputText = styled.Text`
     fontFamily: 'JejuMyeongjo';
     margin-right: auto;
-    font-size: 11px;
     margin-bottom: 3px;
     margin-left: 10px;
     color: white;
@@ -40,19 +39,30 @@ export const InputText = styled.Text`
 
 export const MainContainer =styled.View`
     display: flex;
-    align-items: center;
+    // align-items: center;
     justify-content: center;
     width: 100%;
     height: 100%;
-    background-color: #3FEFCF3;
+    background-color: #FEFCF3;
     fontFamily: 'JejuMyeongjo';
 `
+export const DiaryListContainer = styled.View`
+    height : 70%
+    weight : 100%
+    display : inline-block;
+    border : 1px solid gray;
+    overflow : auto;
+`
+
 export const DiaryContainer = styled.View`
-box-sizing: border-box;
+    box-sizing: content-box;
+    position: relative;
+    // width: 100%;
+    border-color : rgba(0, 0, 0, 0.2);
+    border-bottom-width : 1px;
+    text-align : center;
 
-position: relative;
-width: 327px;
-height: 60px;
-
-border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction : row;
+    justify-content: center;
 `
