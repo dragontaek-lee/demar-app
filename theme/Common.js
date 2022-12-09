@@ -37,3 +37,9 @@ export const InputText = styled.Text`
     margin-left: 10px;
     color: white;
 `
+
+export const ErrorText = styled.Text`
+    fontFamily: 'JejuMyeongjo';
+    font-size: 11px;
+    color: #E97777;
+`

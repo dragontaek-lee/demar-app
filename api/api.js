@@ -12,8 +12,7 @@ export const signUp = async (email, password, name, token) => {
         });
         accessToken = res.data;
     } catch (err) {
-        console.error(err);
-        console.log("sign-up error", err);
+        throw err;
     }
     return accessToken;
 }
@@ -28,8 +27,7 @@ export const processLogind = async (email, password) => {
         });
         accessToken = res.data;
     } catch (err) {
-        console.error(err);
-        console.log("login error", err);
+        throw err;
     }
     return accessToken;
 }
