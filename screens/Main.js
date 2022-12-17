@@ -9,7 +9,7 @@ export function Main({navigation, view, DiaryTitle_props, DiartText_props}) {
     return (
       <MainContainer onLayout={view}>
         <LogoContainer>
-          <LogoTitle>일기 작성</LogoTitle>
+          <LogoTitle>일기 List</LogoTitle>
           <LogoContent>자동으로 음악을 추천해드려요</LogoContent>
         </LogoContainer>
         <DiaryListContainer>

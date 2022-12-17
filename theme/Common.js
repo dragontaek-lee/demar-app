@@ -41,6 +41,7 @@ export const MainContainer =styled.View`
     display: flex;
     // align-items: center;
     justify-content: center;
+    margin-top : 20px;
     width: 100%;
     height: 100%;
     background-color: #FEFCF3;
@@ -50,7 +51,8 @@ export const DiaryListContainer = styled.View`
     height : 70%
     weight : 100%
     display : inline-block;
-    border : 1px solid gray;
+    
+    margin-top : 30px;
     overflow : auto;
 `
 
@@ -61,8 +63,19 @@ export const DiaryContainer = styled.View`
     border-color : rgba(0, 0, 0, 0.2);
     border-bottom-width : 1px;
     text-align : center;
+    margin-top : 20px;
 
     display: flex;
     flex-direction : row;
     justify-content: center;
+`
+
+export const WriteContainer = styled.View`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #FEFCF3;
+    fontFamily: 'JejuMyeongjo';
 `

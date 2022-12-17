@@ -6,17 +6,14 @@ export const LogoContainer = styled.View`
     top : 50px;
     left : 20px;
     overflow : auto;
-    border : 1px solid black;
+    // border : 1px solid black;
 `
 
 export const LogoTitle = styled.Text`
-    border : 1px solid black;
-
+    // border : 1px solid black;
     position: relative;
     width: 100px;
     height: 29px;
-    // left: 21px;
-    // top: 51px;
 
     font-size: 24px;
     line-height: 29px;
@@ -47,7 +44,7 @@ export const LogoContent = styled.Text`
 `
 export const DiaryTextComponent = styled.View`
     float : left;
-    border : 1px solid red; 
+    // border : 1px solid red; 
     box-sizing: border-box;
     width : 70%;
     height : 60px;
@@ -66,7 +63,7 @@ margin : 2px;
 margin-left : 0px;
 // border-color : rgba(0, 0, 0, 0.2);
 // border-left-width : 1px;
-border : 1px solid blue;
+// border : 1px solid blue;
 display : inline-flex;
 
 line-height : 60px;
