@@ -1,12 +1,13 @@
 import styled from 'styled-components/native';
 
 
+
 export const WriteBoxContainer = styled.View`
     // box-sizing: border-box;
     margin: auto;
     align-items: center;
     justify-content: center;
-    // border : 1px solid black;
+    border : 1px solid black;
     
 `
 export const TitleBox = styled.View`

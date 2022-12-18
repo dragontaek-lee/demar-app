@@ -1,4 +1,4 @@
-import DiaryAddBtn from '../assets/AddBtn.png';
+import DiaryAddBtn from '../assets/DiaryAddBtn.png';
 
 import {MainContainer, DiaryContainer, DiaryListContainer}from '../theme/Common';
 

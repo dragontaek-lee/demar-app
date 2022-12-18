@@ -79,3 +79,13 @@ export const WriteContainer = styled.View`
     background-color: #FEFCF3;
     fontFamily: 'JejuMyeongjo';
 `
+
+export const ResultPageContainer = styled.View`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #FEFCF3;
+    fontFamily: 'JejuMyeongjo';
+`
