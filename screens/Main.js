@@ -4,6 +4,8 @@ import { LogoContainer, LogoTitle, LogoContent, DiaryTextComponent,DiaryContent,
 import { View, Button, Text } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+import { DiaryList } from "../api/api"
+
 
 export function Main({navigation, view, DiaryTitle_props, DiartText_props}) {
     AsyncStorage.getItem('AccessToken').then(res =>

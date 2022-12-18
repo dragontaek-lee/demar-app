@@ -31,3 +31,29 @@ export const processLogind = async (email, password) => {
     }
     return accessToken;
 }
+
+export const DiaryList = async (token) => {
+    let diarylist;
+    try {
+        const res = await axios.get(`${API_URL}/diary/`);
+        diarylist = res.data;
+    } catch (err) {
+        throw err;
+    }
+    return diarylist;
+}
+
+export const PostDiary = async (title, content, token) => {
+    let postdiary;
+    try {
+        axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+        const res = await axios.post(`${API_URL}/diary/write/`, {
+            title: title,
+            content: content,
+        });
+        postdiary = res.data;
+    } catch (err) {
+        throw err;
+    }
+    return postdiary;
+}

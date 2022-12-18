@@ -26,8 +26,8 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        {/* <Stack.Screen name="Login" component={Login} options={{view: onLayoutRootView}}/>
-        <Stack.Screen name="SignIn" component={SignIn} options={{view: onLayoutRootView}}/> */}
+        <Stack.Screen name="Login" component={Login} options={{view: onLayoutRootView}}/>
+        <Stack.Screen name="SignIn" component={SignIn} options={{view: onLayoutRootView}}/>
         <Stack.Screen name="Main" component={Main} options={{view: onLayoutRootView}}/>
         <Stack.Screen name="Write" component={Write} options={{view: onLayoutRootView}}/>
         <Stack.Screen name="Result" component={Result} options={{view: onLayoutRootView}}/>
