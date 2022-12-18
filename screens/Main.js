@@ -29,13 +29,12 @@ export function Main({navigation, view, DiaryTitle_props, DiartText_props}) {
       console.log(list);
     },[])
 
-
     if(list.length == 0) return <Text>loading</Text>
 
     const testarray = list.map((item) => {
 
       return (
-        <DiaryContainer>
+        <DiaryContainer onPress={()=> navigation.push('Result', {id : item.id})}>
         <DiaryTextComponent>
           <DiaryTitle>{item.title}</DiaryTitle>
           <DiaryContent>{item.content}</DiaryContent>
@@ -44,15 +43,12 @@ export function Main({navigation, view, DiaryTitle_props, DiartText_props}) {
       </DiaryContainer>
       );
     })
-
-
      return (
       <MainContainer onLayout={view}>
         <LogoContainer>
           <LogoTitle>일기 List</LogoTitle>
           <LogoContent>자동으로 음악을 추천해드려요</LogoContent>
         </LogoContainer>
-
         <DiaryListContainer>
           { testarray }
         </DiaryListContainer>
