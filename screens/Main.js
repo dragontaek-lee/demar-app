@@ -5,33 +5,56 @@ import { View, Button, Text } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { DiaryList } from "../api/api"
+import { useEffect, useState } from 'react';
+import dayjs from "dayjs";
 
 
 export function Main({navigation, view, DiaryTitle_props, DiartText_props}) {
-    AsyncStorage.getItem('AccessToken').then(res =>
-      console.log('Storage Token : ', res),
-    );
-    return (
+    const [token, setToken] = useState('');
+    const [list, setlist] = useState([]);
+
+    useEffect(()=>{
+      const DiaryGetList = async (token) => {
+        await DiaryList(token).then(res => {
+          console.log("test",res);
+          setlist(res);
+        }).catch((e)=>{
+          console.log('get-list-failed',e);
+        })
+      }
+      AsyncStorage.getItem('AccessToken').then(res =>
+        DiaryGetList(res)
+      );
+      DiaryGetList();
+      console.log(list);
+    },[])
+
+
+    if(list.length == 0) return <Text>loading</Text>
+
+    const testarray = list.map((item) => {
+
+      return (
+        <DiaryContainer>
+        <DiaryTextComponent>
+          <DiaryTitle>{item.title}</DiaryTitle>
+          <DiaryContent>{item.content}</DiaryContent>
+        </DiaryTextComponent>
+        <DiaryDate>{dayjs(item.createdAt).format("MM/DD")}</DiaryDate>
+      </DiaryContainer>
+      );
+    })
+
+
+     return (
       <MainContainer onLayout={view}>
         <LogoContainer>
           <LogoTitle>일기 List</LogoTitle>
           <LogoContent>자동으로 음악을 추천해드려요</LogoContent>
         </LogoContainer>
+
         <DiaryListContainer>
-          <DiaryContainer>
-            <DiaryTextComponent>
-              <DiaryTitle>일기제목 {DiaryTitle_props}</DiaryTitle>
-              <DiaryContent>일기내용블라블라블라블라{DiartText_props}</DiaryContent>
-            </DiaryTextComponent>
-            <DiaryDate>11/22</DiaryDate>
-          </DiaryContainer>
-          <DiaryContainer>
-            <DiaryTextComponent>
-              <DiaryTitle>일기제목1 {DiaryTitle_props}</DiaryTitle>
-              <DiaryContent>일기내용블라블라블라블라{DiartText_props}</DiaryContent>
-            </DiaryTextComponent>
-            <DiaryDate>11/22</DiaryDate>
-          </DiaryContainer>
+          { testarray }
         </DiaryListContainer>
 
         <DiaryAddButton onPress={()=> navigation.push('Write')}>
@@ -40,3 +63,5 @@ export function Main({navigation, view, DiaryTitle_props, DiartText_props}) {
       </MainContainer>
     );
   }
+
+  export default Main;

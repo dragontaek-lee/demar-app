@@ -35,6 +35,7 @@ export const processLogind = async (email, password) => {
 export const DiaryList = async (token) => {
     let diarylist;
     try {
+        axios.defaults.headers.common.Authorization = `Bearer ${token}`;
         const res = await axios.get(`${API_URL}/diary/`);
         diarylist = res.data;
     } catch (err) {
