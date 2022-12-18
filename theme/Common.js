@@ -9,7 +9,6 @@ export const AuthContainer = styled.View`
     background-color: #3F3D56;
     fontFamily: 'JejuMyeongjo';
 `
-
 export const InputContainer = styled.View`
     margin-top: 30px;
     width: 280px;
@@ -18,7 +17,6 @@ export const InputContainer = styled.View`
     align-items: center;
     justify-content: center;
 `;
-
 export const InputContent = styled.TextInput`
     height: 39px;
     width: 280px;
@@ -28,7 +26,6 @@ export const InputContent = styled.TextInput`
     margin-bottom: 10px;
     padding: 8px;
 `
-
 export const InputText = styled.Text`
     fontFamily: 'JejuMyeongjo';
     margin-right: auto;
@@ -36,10 +33,8 @@ export const InputText = styled.Text`
     margin-left: 10px;
     color: white;
 `
-
 export const MainContainer = styled.View`
     display: flex;
-    // align-items: center;
     justify-content: center;
     margin-top : 20px;
     width: 100%;
@@ -51,15 +46,12 @@ export const DiaryListContainer = styled.View`
     height : 70%
     weight : 100%
     display : inline-block;
-    
     margin-top : 30px;
     overflow : auto;
 `
-
 export const DiaryContainer = styled.View`
     box-sizing: content-box;
     position: relative;
-    // width: 100%;
     border-color : rgba(0, 0, 0, 0.2);
     border-bottom-width : 1px;
     text-align : center;
@@ -69,7 +61,6 @@ export const DiaryContainer = styled.View`
     flex-direction : row;
     justify-content: center;
 `
-
 export const WriteContainer = styled.View`
     display: flex;
     align-items: center;
@@ -79,19 +70,11 @@ export const WriteContainer = styled.View`
     background-color: #FEFCF3;
     fontFamily: 'JejuMyeongjo';
 `
-// export const DiaryContainer = styled.View`
-//     box-sizing: border-box;
-//     position: relative;
-//     width: 327px;
-//     height: 60px;
-//     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-// `
 export const ErrorText = styled.Text`
     fontFamily: 'JejuMyeongjo';
     font-size: 11px;
     color: #E97777;
 `
-
 export const ResultPageContainer = styled.View`
     display: flex;
     align-items: center;

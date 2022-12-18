@@ -1,11 +1,9 @@
 import styled from 'styled-components/native';
 
 export const WriteBoxContainer = styled.View`
-    // box-sizing: border-box;
     margin: auto;
     align-items: center;
     justify-content: center;
-    
 `
 export const TitleBox = styled.View`
     box-sizing: border-box;
@@ -14,7 +12,6 @@ export const TitleBox = styled.View`
 export const WriteTitle = styled.Text`
     width: 50px;
     height: 14px;
-
     font-size: 12px;
     line-height: 14px;
     display: flex;
@@ -36,9 +33,7 @@ export const ContentBox = styled.View`
 export const WriteContent = styled.Text`
     width: 50px;
     height: 14px;
-
     margin-top : 20px;
-
     font-size: 12px;
     line-height: 14px;
     display: flex;
@@ -63,11 +58,7 @@ export const CautionMent = styled.Text`
     align-items: center;
     text-align: right;
     vertical-align : text-top;
-
     color: #E97777;
-
-    // border : 1px solid black;
     margin : auto;
-
 `
 
