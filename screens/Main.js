@@ -1,14 +1,14 @@
 import DiaryAddBtn from '../assets/DiaryAddBtn.png';
 import { MainContainer, DiaryContainer, DiaryListContainer } from '../theme/Common';
-import { LogoContainer, LogoTitle, LogoContent, DiaryTextComponent,DiaryContent, DiaryDateComponent, DiaryTitle, DiaryDate, DiaryAddButton, ImageInner} from '../theme/StyledMainPage';
+import { LogoContainer, LogoTitle, LogoContent, DiaryTextComponent,DiaryContent, DiaryDateComponent,DiaryTitle, DiaryDate, DiaryAddButton, ImageMainInner} from '../theme/StyledMainPage';
 import { View, Button, Text } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 export function Main({navigation, view, DiaryTitle_props, DiartText_props}) {
     AsyncStorage.getItem('AccessToken').then(res =>
       console.log('Storage Token : ', res),
     );
-    
     return (
       <MainContainer onLayout={view}>
         <LogoContainer>
@@ -33,7 +33,7 @@ export function Main({navigation, view, DiaryTitle_props, DiartText_props}) {
         </DiaryListContainer>
 
         <DiaryAddButton onPress={()=> navigation.push('Write')}>
-          <ImageInner source={DiaryAddBtn}></ImageInner>
+          <ImageMainInner source={DiaryAddBtn}></ImageMainInner>
         </DiaryAddButton>
       </MainContainer>
     );

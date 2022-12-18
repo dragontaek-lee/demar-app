@@ -57,11 +57,47 @@ export const DiaryListContainer = styled.View`
 `
 
 export const DiaryContainer = styled.View`
-box-sizing: border-box;
+    box-sizing: content-box;
+    position: relative;
+    // width: 100%;
+    border-color : rgba(0, 0, 0, 0.2);
+    border-bottom-width : 1px;
+    text-align : center;
+    margin-top : 20px;
 
-position: relative;
-width: 327px;
-height: 60px;
+    display: flex;
+    flex-direction : row;
+    justify-content: center;
+`
 
-border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+export const WriteContainer = styled.View`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #FEFCF3;
+    fontFamily: 'JejuMyeongjo';
+`
+// export const DiaryContainer = styled.View`
+//     box-sizing: border-box;
+//     position: relative;
+//     width: 327px;
+//     height: 60px;
+//     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+// `
+export const ErrorText = styled.Text`
+    fontFamily: 'JejuMyeongjo';
+    font-size: 11px;
+    color: #E97777;
+`
+
+export const ResultPageContainer = styled.View`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #FEFCF3;
+    fontFamily: 'JejuMyeongjo';
 `

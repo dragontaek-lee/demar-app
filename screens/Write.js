@@ -23,7 +23,7 @@ export function Write ({navigation, view}){
                 </ContentBox>
                 <ButtonContainer>
                     <ButtonContent color ={'#3F3D56'}>
-                        <InnerText color={'#FFFFFF'}>저장하기</InnerText>
+                        <InnerText color={'#FFFFFF'} onPress={()=>navigation.push('Result')}>저장하기</InnerText>
                     </ButtonContent>
                     <ButtonContent onPress={()=>navigation.push('Main')} color="#E97777">
                         <InnerText color={'#FFFFFF'}>뒤로가기</InnerText>

@@ -8,7 +8,7 @@ import albumcover5 from "../assets/album5.jpeg"
 //styled
 import { LogoContainer, LogoContent, LogoTitle } from "../theme/StyledMainPage";
 import {ResultPageContainer} from "../theme/Common"
-import { ResultboxContainer, TitleBox, ResultTitle, ResultTitleText,ContentBox, ResultContent, ResultContentBox,ResultContainer,Resultlist,AlbumCover, Songinfo, SongTitle, SongArtist} from "../theme/StyledResultPage"
+import { ResultboxContainer, TitleBox, ResultTitle, ResultTitleText, TitleText, ContentBox, ResultContent, ResultContentBox,TextContent,ResultContainer,Resultlist,AlbumCover, Songinfo, SongTitle, SongArtist} from "../theme/StyledResultPage"
 
 
 export function Result ({navigation, view}){
@@ -21,11 +21,13 @@ export function Result ({navigation, view}){
             <ResultboxContainer>
                 <TitleBox>
                     <ResultTitle>일기 제목</ResultTitle>
-                    <ResultTitleText>오늘은 기다리고 기다리던 면접 발표 날!</ResultTitleText>
+                    <ResultTitleText><TitleText>오늘은 기다리고 기다리던 면접 발표 날!</TitleText></ResultTitleText>
                 </TitleBox>
                 <ContentBox>
                     <ResultContent>일기 내용</ResultContent>
-                    <ResultContentBox>오늘은 그동안  기다리고 기다린  삼성전자 1차 발표날이다. 너무너무 떨린다. 붙었으면 좋겠다. 붙으면 차도 사고 집도 사야지. 차는 제네시스 gv80으로 뽑고 집은 그래도 회사 근처 오피스텔 전세로 들어가서 매매로 전환해야겠다. 그러면 빨리 결혼하고 엄마아빠한테도 효도시켜드려야겠다. 라는 꿈을 꿨다. 내 성적에 삼전은 무슨. 취직이나 할 수 있으면 좋겠네.</ResultContentBox>
+                    <ResultContentBox>
+                        <TextContent>오늘은 그동안  기다리고 기다린  삼성전자 1차 발표날이다. 너무너무 떨린다. 붙었으면 좋겠다. 붙으면 차도 사고 집도 사야지. 차는 제네시스 gv80으로 뽑고 집은 그래도 회사 근처 오피스텔 전세로 들어가서 매매로 전환해야겠다. 그러면 빨리 결혼하고 엄마아빠한테도 효도시켜드려야겠다. 라는 꿈을 꿨다. 내 성적에 삼전은 무슨. 취직이나 할 수 있으면 좋겠네.
+                        </TextContent></ResultContentBox>
                 </ContentBox>
                 <ResultContainer>
                     <Resultlist>

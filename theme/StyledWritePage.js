@@ -1,22 +1,18 @@
 import styled from 'styled-components/native';
 
-
-
 export const WriteBoxContainer = styled.View`
     // box-sizing: border-box;
     margin: auto;
     align-items: center;
     justify-content: center;
-    border : 1px solid black;
     
 `
 export const TitleBox = styled.View`
-box-sizing: border-box;
-margin: auto;
-
+    box-sizing: border-box;
+    margin: auto;
 `
 export const WriteTitle = styled.Text`
-    width: 45px;
+    width: 50px;
     height: 14px;
 
     font-size: 12px;
@@ -38,7 +34,7 @@ export const ContentBox = styled.View`
     margin: auto;
 `
 export const WriteContent = styled.Text`
-    width: 45px;
+    width: 50px;
     height: 14px;
 
     margin-top : 20px;
