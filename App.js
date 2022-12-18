@@ -29,6 +29,7 @@ function App() {
         <Stack.Screen name="Main" component={Main} options={{view: onLayoutRootView}}/>
         <Stack.Screen name="Login" component={Login} options={{view: onLayoutRootView}}/>
         <Stack.Screen name="SignIn" component={SignIn} options={{view: onLayoutRootView}}/>
+        <Stack.Screen name="Main" component={Main} options={{view: onLayoutRootView}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

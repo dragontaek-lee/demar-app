@@ -38,7 +38,7 @@ export const InputText = styled.Text`
     color: white;
 `
 
-export const MainContainer =styled.View`
+export const MainContainer = styled.View`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -48,11 +48,14 @@ export const MainContainer =styled.View`
     fontFamily: 'JejuMyeongjo';
 `
 export const DiaryContainer = styled.View`
-box-sizing: border-box;
-
-position: relative;
-width: 327px;
-height: 60px;
-
-border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    position: relative;
+    width: 327px;
+    height: 60px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+`
+export const ErrorText = styled.Text`
+    fontFamily: 'JejuMyeongjo';
+    font-size: 11px;
+    color: #E97777;
 `
