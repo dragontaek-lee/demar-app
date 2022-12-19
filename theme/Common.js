@@ -49,7 +49,7 @@ export const DiaryListContainer = styled.View`
     margin-top : 30px;
     overflow : auto;
 `
-export const DiaryContainer = styled.View`
+export const DiaryContainer = styled.Pressable`
     box-sizing: content-box;
     position: relative;
     border-color : rgba(0, 0, 0, 0.2);

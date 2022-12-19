@@ -89,7 +89,6 @@ export const AlbumCover = styled.Image`
     width: 45px;
     height: 45px;
     margin-left : 20px;
-
 `
 export const Songinfo = styled.View`
     margin-left : 15px;

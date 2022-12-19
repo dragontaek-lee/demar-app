@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { API_URL } from '@env';
+import { resolveDiscoveryAsync } from 'expo-auth-session';
 
 export const signUp = async (email, password, name, token) => {
     let accessToken;
@@ -57,4 +58,40 @@ export const PostDiary = async (title, content, token) => {
         throw err;
     }
     return postdiary;
+}
+
+export const getDiary = async (token, id) => {
+    let diary;
+    try {
+        axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+        const res = await axios.get(`${API_URL}/diary/${id}`);
+        diary = res.data;
+    } catch (err) {
+        throw err;
+    }
+    return diary;
+}
+
+export const getRecommends = async (token, id) => {
+    let recommends;
+    try {
+        axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+        const res = await axios.get(`${API_URL}/diary/music/${id}`);
+        recommends = res.data;
+    } catch (err) {
+        throw err;
+    }
+    return recommends;
+}
+
+export const deleteDiary = async (token, id) => {
+    let result;
+    try {
+        axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+        const res = await axios.get(`${API_URL}/diary/${id}/delete`);
+        result = res.data;
+    } catch (err) {
+        throw err;
+    }
+    return result;
 }
