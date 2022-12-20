@@ -46,10 +46,11 @@ export const DiaryList = async (token) => {
 }
 
 export const PostDiary = async (title, content, token) => {
+    let start = new Date();
     let postdiary;
     try {
         axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-        const res = await axios.post(`${API_URL}/diary/write/`, {
+        const res = await axios.post(`${API_URL}/diary/write`, {
             title: title,
             content: content,
         });
@@ -57,6 +58,8 @@ export const PostDiary = async (title, content, token) => {
     } catch (err) {
         throw err;
     }
+    let end = new Date();
+    console.log("time:",end-start);
     return postdiary;
 }
 

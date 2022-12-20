@@ -41,7 +41,6 @@ export function Login({navigation, view}) {
       })
     }
 
-
     return (
       <AuthContainer onLayout={view}>
         <ImageContainer>

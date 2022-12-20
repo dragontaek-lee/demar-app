@@ -46,7 +46,6 @@ export const DiaryListContainer = styled.View`
     height : 70%
     weight : 100%
     display : inline-block;
-    margin-top : 30px;
     overflow : auto;
 `
 export const DiaryContainer = styled.Pressable`

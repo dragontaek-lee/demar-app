@@ -7,8 +7,6 @@ import { PostDiary } from "../api/api"
 import { useState } from "react";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-
-
 export function Write ({navigation, view}){
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
@@ -27,10 +25,9 @@ export function Write ({navigation, view}){
     }
   
     const clicWrite = async (title,content) => {
-        console.log("test");
         await PostDiary(title,content,token).then(res=>{
-          navigation.reset({routes: [{name: 'Result'}]})
           console.log(res);
+          navigation.push('Result', {diaryId : res})
         }).catch((e)=>{
           console.log('Diary-upload-failed', e);
           setIsFailed(true);
@@ -54,6 +51,7 @@ export function Write ({navigation, view}){
                 <ContentBox>
                     <WriteContent>일기 내용</WriteContent>
                     <WriteContentBox 
+                    multiline={true}
                     placeholder="일기의 내용을 입력해주세요"
                     onChangeText={(content) => setContent(content)}></WriteContentBox>
                     { isfailed? <CautionMent>모든 정보를 입력해주세요</CautionMent>:""}

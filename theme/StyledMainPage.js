@@ -86,8 +86,6 @@ export const DiaryAddButton = styled.Pressable`
     width: 80px;
     left: 75%;
     bottom : 0%;
-    border-radius: 1000px;
- 
 `
 
 export const ImageMainInner = styled.Image`

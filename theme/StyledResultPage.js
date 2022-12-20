@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 
 export const ResultContainer = styled.View`
     width: 319px;
-    height: 350px;
+    height: 360px;
     margin-top : 20px;
     background: #272727;
     box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.25);
@@ -91,15 +91,14 @@ export const AlbumCover = styled.Image`
     margin-left : 20px;
 `
 export const Songinfo = styled.View`
-    margin-left : 15px;
-    margin-top : 8px;
+    margin-left : 10px;
 `
 export const SongTitle = styled.Text`
+    width: 230px;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 17px;
     color: #FFFFFF;
-
 `
 export const SongArtist = styled.Text`
     font-weight: 300;

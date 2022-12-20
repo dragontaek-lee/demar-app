@@ -50,7 +50,7 @@ export function Result ({navigation, view, route}){
             <Resultlist>
                 <AlbumCover source={{uri: item.cover}}></AlbumCover>
                 <Songinfo>
-                    <SongTitle>{item.title}</SongTitle>
+                    <SongTitle numberOfLines={2}>{item.title}</SongTitle>
                     <SongArtist>{item.artist}</SongArtist>
                 </Songinfo>
             </Resultlist>

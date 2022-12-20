@@ -10,7 +10,6 @@ import dayjs from "dayjs";
 
 
 export function Main({navigation, view, DiaryTitle_props, DiartText_props}) {
-    const [token, setToken] = useState('');
     const [list, setlist] = useState([]);
 
     useEffect(()=>{
@@ -27,22 +26,19 @@ export function Main({navigation, view, DiaryTitle_props, DiartText_props}) {
       DiaryGetList();
     },[])
 
-    if(list.length == 0) return <Text>loading</Text>
-
     const diaryList = list.map((item) => {
       return (
         <DiaryContainer onPress={()=> navigation.push('Result', {diaryId : item.id})}>
         <DiaryTextComponent>
-          <DiaryTitle>{item.title}</DiaryTitle>
-          <DiaryContent>{item.content}</DiaryContent>
+          <DiaryTitle key={item.title}>{item.title}</DiaryTitle>
+          <DiaryContent key={item.content}>{item.content}</DiaryContent>
         </DiaryTextComponent>
-        <DiaryDate>{dayjs(item.createdAt).format("MM/DD")}</DiaryDate>
+        <DiaryDate key={item.createdAt}>{dayjs(item.createdAt).format("MM/DD")}</DiaryDate>
       </DiaryContainer>
       );
     })
 
      return (
-      <ScrollView>
         <MainContainer onLayout={view}>
           <LogoContainer>
             <LogoTitle>일기 List</LogoTitle>
@@ -55,7 +51,6 @@ export function Main({navigation, view, DiaryTitle_props, DiartText_props}) {
             <ImageMainInner source={DiaryAddBtn}></ImageMainInner>
           </DiaryAddButton>
         </MainContainer>
-      </ScrollView>
     );
   }
 
